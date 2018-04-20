@@ -1,5 +1,17 @@
 """
 This script allow you to scan your news files with clamav
+
+permet de connaitre l'extension d'un fichier
+from os.path import splitext
+file_name,extension = splitext('/home/lancaster/Downloads/a.ppt')
+
+deplacer un fichier en Python
+import shutil
+shutil.move("source","Dest")
+
+lister les fichiers dans un dossier
+import glob
+glob.glob("*")
 """
 
 import os
@@ -21,6 +33,18 @@ def det_virus(val):
     result="".join(coup_chaine)
     finish=int(result)
     return finish
+
+#fonction qui gére les rangements
+def rangements():
+        image = [".jpg", ".png", ".jpeg", ".gif", ".bmp"]
+        pdf = [".pdf"]
+        word = [".odt", ".doc", ".docx"]
+        text = [".txt", ".md"]
+        presentation = [".odp", ".pptx", ".ppt", ".ppsx"]
+        compressed = [".zip", ".rar", ".deb", ".tar.xz", ".tar.gz", ".tar.bz2", ".gz", ".tgz"]
+        music = [".mp3", ".wav"]
+        video = [".mkv", ".mp4", ".avi", ".wmv", ".mov", ".flv", "webm"]
+        torrent = [".torrent"]
 
 
 
