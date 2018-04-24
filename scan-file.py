@@ -29,17 +29,19 @@ def det_virus(val):
 
 #fonction qui gére les rangements
 def rangements():
-        image = [".jpg", ".png", ".jpeg", ".gif", ".bmp", ".svg"]
+        image = [".jpg", ".png", ".jpeg", ".gif", ".bmp", ".svg", ".drw", ".dwg",".dxf",".eps",".ico",".psd",".tif"]
         pdf = [".pdf"]
-        word = [".odt", ".doc", ".docx"]
-        text = [".txt", ".md"]
-        presentation = [".odp", ".pptx", ".ppt", ".ppsx"]
+        word = [".odt", ".doc", ".docx", ".dot"]
+        text = [".txt", ".md",".rtf"]
+        presentation = [".odp", ".pptx", ".ppt", ".ppsx",".pps",".ppt",".pub"]
+        tableur=[".xls",".xlsx",".ods"]
         compressed = [".zip", ".rar", ".deb", ".tar.xz", ".tar.gz", ".tar.bz2", ".gz", ".tgz",".ace","."]
-        music = [".mp3", ".wav"]
-        video = [".mkv", ".mp4", ".avi", ".wmv", ".mov", ".flv", "webm"]
+        music = [".mp3", ".wav",".wmv"]
+        video = [".mkv", ".mp4", ".avi", ".wmv", ".mov", ".flv", "webm", ".mpg",".qt"]
         torrent = [".torrent"]
         windows = [".exe",".msi"]
-        programmation = [".py", ".sh", ".csv", ".jar", ".java", ".ino", ".bin",".vcf",".c",".class",".cpp",".css","."]
+        programmation = [".py", ".sh", ".csv", ".jar", ".java",".jav", ".ino", ".bin",".vcf",".c",".class",".cpp",".css",".dll",".h",".html",".php",".pl",".sql"]
+        police=[".ttf"]
 
         liste = glob.glob("*")
         liste_extension=[]
