@@ -1,6 +1,8 @@
 """
 This script allow automatc you to scan your news files with clamav and move file in respective directory
 
+#auteur:Mamadou diallo
+#Mail: misterdiallo1@gmail.com
 
 """
 
