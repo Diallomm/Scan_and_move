@@ -7,8 +7,9 @@ def check_folder():
     """check if you have respective folder """
 
     folder=["Downloads","Documents","Images","Movie","Music","Compressed"]
-    folder_Downloads=["Virus","PDF","Writer","Text","Presentation","Tableur","Torrent","Windows","Os","Font","Code_file"]
-    
+    folder_Documents=["PDF","Writer","Text","Presentation","Tableur"]
+    folder_Downloads=["Virus","Torrent","Windows","Os","Font","Code_file"]
+
 
     Saisie_folder=input("Do you want to check if you have good folder to move respective file ? Y|N: ")
 
@@ -20,12 +21,19 @@ def check_folder():
                 print("Wait to created {0} folder".format(i))
                 os.makedirs("{0}".format(i))
 
-        for j in folder_Downloads:
-            if os.path.exists("/home/{0}/Downloads/{1}".format(user,j)):
+        for j in folder_Documents:
+            if os.path.exists("/home/{0}/Documents/{1}".format(user,j)):
                 print("{0} exist ✔️".format(j))
             else:
                 print("Wait to created {0} folder".format(j))
                 os.makedirs("/home/{0}/Documents/{1}".format(user,j))
+
+        for k in folder_Downloads:
+            if os.path.exists("/home/{0}/Downloads/{1}".format(user,k)):
+                print("{0} exist ✔️".format(k))
+            else:
+                print("Wait to created {0} folder".format(k))
+                os.makedirs("/home/{0}/Downloads/{1}".format(user,k))
 
 
 
