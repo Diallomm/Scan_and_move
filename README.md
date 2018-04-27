@@ -24,7 +24,7 @@ how to use this
 
 add this
 
-		0 23 * * * /usr/bin/python3 "directory how is a script"
+		0 23 * * * /usr/bin/python3 "directory where is a script"
 
 exemple:
 
