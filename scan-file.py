@@ -47,7 +47,7 @@ def rangements():
         windows = [".exe",".msi"]
         programmation = [".py", ".sh", ".csv", ".jar", ".java",".jav", ".ino", ".bin",".vcf",".c",".class",".cpp",".css",".dll",".h",".html",".php",".pl",".sql"]
         font=[".ttf"]
-        os=[".iso",".img"]
+        Iso=[".iso",".img"]
 
         liste = glob.glob("*")
         liste_extension=[]
@@ -83,9 +83,9 @@ def rangements():
             elif j in programmation:
                 os.system("mv *{0} /home/{1}/Downloads/Code_file".format(j,user))
             elif j in font:
-                os.system("mv *{0} /home/{1}/Downloads/Font"..format(j,user))
-            elif j in os:
-                os.system("mv *{0} /home/{1}/Downloads/Os"..format(j,user))
+                os.system("mv *{0} /home/{1}/Downloads/Font".format(j,user))
+            elif j in Iso:
+                os.system("mv *{0} /home/{1}/Downloads/Os".format(j,user))
 
 
 #get name of user

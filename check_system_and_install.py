@@ -154,6 +154,6 @@ else:
     print("Super! All is Good ✔️✔️✔️")
     check_folder()
 
-""" check if you have Antivirus clamav""""
+""" check if you have Antivirus clamav"""
 check_clamscan()
 print("Super! All is Good ✔️✔️✔️")
