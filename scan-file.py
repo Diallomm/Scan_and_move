@@ -7,14 +7,39 @@ This script allow automatc you to scan your news files with clamav and move file
 """
 #import library
 import os
+import time
 import tkinter
 import glob
 import shutil
 from os.path import splitext
 
-#printing information with tkinter
-mainapp=tkinter.Tk()
-mainapp.title("Alerte")
+def Scan_print():
+    #printing information with tkinter
+    mainapp=tkinter.Tk()
+    mainapp.title("Alerte")
+
+    #use clamav to scan Downloads folder
+    scan=os.popen("clamscan --move=virus | grep Infected").read()
+    nb_virus=det_virus(scan)
+    #check and print informations with tkinter
+    if nb_virus == 0:
+        app=tkinter.Label(mainapp,text=("VIRUS NOT FOUND ✔️"))
+        app.pack()
+    elif nb_virus == 1:
+        app=tkinter.Label(mainapp,text=("VIRUS FOUND ❌\n consult the virus folder to see the copies"))
+        app.pack()
+    elif nb_virus == 2:
+        app=tkinter.Label(mainapp,text=("An error (s) occurred. ❌"))
+        app.pack()
+
+    rangements()
+
+    end=tkinter.Label(mainapp,text=("Your files are were moving with success! ✔️"))
+    end.pack()
+
+    mainapp.after(10000, mainapp.destroy)
+    mainapp.mainloop()
+
 
 #this function allow you to know if after scanning with clamscan you have virus or not
 def det_virus(val):
@@ -65,7 +90,7 @@ def rangements():
             elif j in pdf:
                 os.system("mv *{0} /home/{1}/Documents/PDF".format(j,user))
             elif j in word:
-                os.system("mv *{0} /home{1}/Documents/Writer".format(j,user))
+                os.system("mv *{0} /home/{1}/Documents/Writer".format(j,user))
             elif j in text:
                 os.system("mv *{0} /home/{1}/Documents/Text".format(j,user))
             elif j in presentation:
@@ -91,22 +116,5 @@ def rangements():
 #get name of user
 user=os.getlogin()
 os.chdir("/home/{0}/Downloads".format(user))
-#use clamav to scan Downloads folder
-scan=os.popen("clamscan --move=virus | grep Infected").read()
-nb_virus=det_virus(scan)
-#check and print informations with tkinter
-if nb_virus == 0:
-    app=tkinter.Label(mainapp,text=("VIRUS NOT FOUND ✔️"))
-    app.pack()
-elif nb_virus == 1:
-    app=tkinter.Label(mainapp,text=("VIRUS FOUND ❌\n consult the virus folder to see the copies"))
-    app.pack()
-elif nb_virus == 2:
-    app=tkinter.Label(mainapp,text=("An error (s) occurred. ❌"))
-    app.pack()
-
-rangements()
-end=tkinter.Label(mainapp,text=("Your files are were moving with success! ✔️"))
-end.pack()
-
-mainapp.mainloop()
+Scan_print()
+exit()
