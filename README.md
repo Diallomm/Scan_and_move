@@ -2,6 +2,11 @@ Scan and move
 --
 this script allows you to scan your download folder with clamav antivirus and move the files to their respective folders (it sorts) the image files (.jpg,.png) it moves them to the Images folder the music files it moves them to the Music folder and so on
 
+--
+
+### ⚠️this script was tested only on the debian family (debian, ubuntu, etc)⚠️
+
+--
 
 how to use this
 --

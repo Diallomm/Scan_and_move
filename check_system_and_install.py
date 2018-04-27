@@ -6,126 +6,27 @@ os.chdir("/home/{0}".format(user))
 def check_folder():
     """check if you have respective folder """
 
-    Saisie_folder=input("Do you want to check if you have good folder to move respective file ? Y|N")
+    folder=["Downloads","Documents","Images","Movie","Music","Compressed"]
+    folder_Downloads=["Virus","PDF","Writer","Text","Presentation","Tableur","Torrent","Windows","Os","Font","Code_file"]
+    
+
+    Saisie_folder=input("Do you want to check if you have good folder to move respective file ? Y|N: ")
+
     if Saisie_folder in ["Y","y","yes","YES"]:
-        # make Downloads folders
-        if os.path.exists("/home/{0}/Downloads".format(user)):
-            print("Downloads exist ✔️")
-        else:
-            print("Wait to created Downloads folder")
-            os.makedirs("Downloads")
+        for i in folder:
+            if os.path.exists("/home/{0}/{1}".format(user,i)):
+                print("{0} exist ✔️".format(i))
+            else:
+                print("Wait to created {0} folder".format(i))
+                os.makedirs("{0}".format(i))
 
-        # make Virus folders, for
-        if os.path.exists("/home/{0}/Downloads/Virus".format(user)):
-            print("Virus exist ✔️")
-        else:
-            print("Wait to created Virus folder")
-            os.makedirs("Downloads/Virus")
+        for j in folder_Downloads:
+            if os.path.exists("/home/{0}/Downloads/{1}".format(user,j)):
+                print("{0} exist ✔️".format(j))
+            else:
+                print("Wait to created {0} folder".format(j))
+                os.makedirs("/home/{0}/Documents/{1}".format(user,j))
 
-        # make image folder
-        if os.path.exists("/home/{0}/Images".format(user)):
-            print("Images exist ✔️")
-        else:
-            print("Wait to created Images folder")
-            os.makedirs("Images")
-
-        # make Documents folder
-        if os.path.exists("/home/{0}/Documents".format(user)):
-            print("Documents exist ✔️")
-        else:
-            print("Wait to created Documents folder")
-            os.makedirs("Documents")
-
-        # make PDF folder for (.PDF)
-        if os.path.exists("/home/{0}/Documents/PDF".format(user)):
-            print("PDF ✔️")
-        else:
-            print("Wait to created PDF folder")
-            os.makedirs("Documents/PDF")
-
-        #make Writer folder for (.odt,.docx)
-        if os.path.exists("/home/{0}/Documents/Writer".format(user)):
-            print("Writer exist ✔️")
-        else:
-            print("Wait to created Writer folder")
-            os.makedirs("Documents/Writer")
-
-        #make Text folder for (.txt )
-        if os.path.exists("/home/{0}/Documents/Text".format(user)):
-            print("Text exist ✔️")
-        else:
-            print("Wait to created Text folder")
-            os.makedirs("Documents/Text")
-
-        #make impress and powerpoint folder for (.pptx, .odp )
-        if os.path.exists("/home/{0}/Documents/Presentation".format(user)):
-            print("Presentation exist ✔️")
-        else:
-            print("Wait to created Presentation folder")
-            os.makedirs("Documents/Presentation")
-
-        #make tableur folder for (.xls, .xlsx )
-        if os.path.exists("/home/{0}/Documents/Tableur".format(user)):
-            print("Tableur exist ✔️")
-        else:
-            print("Wait to created Tableur folder")
-            os.makedirs("Documents/Tableur")
-
-        #make compressed folder for (.zip, .tar.bz2, .deb )
-        if os.path.exists("/home/{0}/Compressed".format(user)):
-            print("Compressed exist ✔️")
-        else:
-            print("Wait to created Compressed folder")
-            os.makedirs("Compressed")
-
-        #make Music folder for (.mp3, .ogg, .opus )
-        if os.path.exists("/home/{0}/Music".format(user)):
-            print("Music exist ✔️")
-        else:
-            print("Wait to created Music folder")
-            os.makedirs("Music")
-
-        #make Movie folder for (.mp4, .mkv )
-        if os.path.exists("/home/{0}/Movie".format(user)):
-            print("Movie exist ✔️")
-        else:
-            print("Wait to created Movie folder")
-            os.makedirs("Movie")
-
-        #make torrent folder for (.torrent )
-        if os.path.exists("/home/{0}/Downloads/Torrent".format(user)):
-            print("Torrent exist ✔️")
-        else:
-            print("Wait to created Torrent folder")
-            os.makedirs("Downloads/Torrent")
-
-        #make windows folder for (.exe, .msi, .bat,... )
-        if os.path.exists("/home/{0}/Downloads/Windows".format(user)):
-            print("Windows exist ✔️")
-        else:
-            print("Wait to created Windows folder")
-            os.makedirs("Downloads/Windows")
-
-        #make Code file folder for (.html, .jav, .pl )
-        if os.path.exists("/home/{0}/Downloads/Code_file".format(user)):
-            print("Code_file exist ✔️")
-        else:
-            print("Wait to created Code_file folder")
-            os.makedirs("Downloads/Code_file")
-
-        #make font folder for (.mp4, .mkv )
-        if os.path.exists("/home/{0}/Downloads/Font".format(user)):
-            print("Font exist ✔️")
-        else:
-            print("Wait to created Font folder")
-            os.makedirs("Downloads/Font")
-
-        #make image os folder for (.iso, .img )
-        if os.path.exists("/home/{0}/Downloads/Os".format(user)):
-            print("Os exist ✔️")
-        else:
-            print("Wait to created Os folder")
-            os.makedirs("Downloads/Os")
 
 
 #This function allow you to test if you have clamav (Antivirus)
