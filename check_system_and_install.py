@@ -15,6 +15,13 @@ def check_folder():
             print("Wait to created Downloads folder")
             os.makedirs("Downloads")
 
+        # make Virus folders, for
+        if os.path.exists("/home/{0}/Downloads/Virus".format(user)):
+            print("Virus exist ✔️")
+        else:
+            print("Wait to created Virus folder")
+            os.makedirs("Downloads/Virus")
+
         # make image folder
         if os.path.exists("/home/{0}/Images".format(user)):
             print("Images exist ✔️")

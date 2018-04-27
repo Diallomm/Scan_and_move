@@ -19,7 +19,7 @@ def Scan_print():
     mainapp.title("Alerte")
 
     #use clamav to scan Downloads folder
-    scan=os.popen("clamscan --move=virus | grep Infected").read()
+    scan=os.popen("clamscan --move=Virus | grep Infected").read()
     nb_virus=det_virus(scan)
     #check and print informations with tkinter
     if nb_virus == 0:
@@ -62,7 +62,7 @@ def rangements():
         image = [".jpg", ".png", ".jpeg", ".gif", ".bmp", ".svg", ".drw", ".dwg",".dxf",".eps",".ico",".psd",".tif"]
         pdf = [".pdf"]
         word = [".odt", ".doc", ".docx", ".dot"]
-        text = [".txt", ".md",".rtf"]
+        text = [".txt", ".md",".rtf",".list"]
         presentation = [".odp", ".pptx", ".ppt", ".ppsx",".pps",".ppt",".pub"]
         tableur=[".xls",".xlsx",".ods"]
         compressed = [".zip", ".rar", ".deb", ".tar.xz", ".tar.gz", ".tar.bz2", ".gz", ".tgz",".ace",".rmp"]
@@ -72,7 +72,7 @@ def rangements():
         windows = [".exe",".msi"]
         programmation = [".py", ".sh", ".csv", ".jar", ".java",".jav", ".ino", ".bin",".vcf",".c",".class",".cpp",".css",".dll",".h",".html",".php",".pl",".sql"]
         font=[".ttf"]
-        Iso=[".iso",".img"]
+        Iso=[".iso",".img",".ova"]
 
         liste = glob.glob("*")
         liste_extension=[]
