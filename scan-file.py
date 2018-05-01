@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# Python 3
 """
 This script allow automatc you to scan your news files with clamav and move file in respective directory
 
@@ -61,7 +64,7 @@ def det_virus(val):
 def rangements():
         image = [".jpg", ".png", ".jpeg", ".gif", ".bmp", ".svg", ".drw", ".dwg",".dxf",".eps",".ico",".psd",".tif"]
         pdf = [".pdf"]
-        word = [".odt", ".doc", ".docx", ".dot"]
+        word = [".odt", ".doc", ".docx", ".dot",".dotx"]
         text = [".txt", ".md",".rtf",".list"]
         presentation = [".odp", ".pptx", ".ppt", ".ppsx",".pps",".ppt",".pub"]
         tableur=[".xls",".xlsx",".ods"]
@@ -102,7 +105,7 @@ def rangements():
             elif j in video:
                 os.system("mv *{0} /home/{1}/Music".format(j,user))
             elif j in torrent:
-                os.system("mv *{0} /home/{1}/Downloads/torrent".format(j,user))
+                os.system("mv *{0} /home/{1}/Downloads/Torrent".format(j,user))
             elif j in windows:
                 os.system("mv *{0} /home/{1}/Downloads/Windows".format(j,user))
             elif j in programmation:
