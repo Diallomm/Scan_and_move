@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# Python 3
+
 """
 This script allow automatc you to scan your news files with clamav and move file in respective directory
 

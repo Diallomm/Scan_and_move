@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# Python 3
+
 import os, time, os.path, subprocess
 user=os.getlogin()
 os.chdir("/home/{0}".format(user))
